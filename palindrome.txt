@@ -1,0 +1,23 @@
+function palindrome(num){
+    var numToStr = num.toString();
+    var result = numToStr.split('').reverse().join('');
+    return numToStr === result
+}
+
+var largest = 0;
+var num1 = 0;
+var num2 = 0;
+
+for(var i = 999; i > 0; i--){
+    for(var j = 999; j > 0; j--){         
+            if(palindrome(i*j)){
+                if(largest < i*j){
+                    largest = i*j
+                    num1 = i;
+                    num2 = j;
+                }   
+            }
+    }
+}
+
+gs.info(num1 + ' * ' + num2 + ' = ' + largest)
